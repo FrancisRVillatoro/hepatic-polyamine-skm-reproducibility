@@ -1,0 +1,5 @@
+__pycache__/
+*.py[cod]
+data/recomputed_*/
+figures_v9/
+.DS_Store

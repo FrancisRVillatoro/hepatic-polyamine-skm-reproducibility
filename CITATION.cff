@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this code or data, please cite the archived Zenodo release."
+title: "Reproducibility code and data for structural kinetic analysis of hepatic polyamine metabolism"
+type: software
+authors:
+  - family-names: Villatoro
+    given-names: Francisco R.
+    affiliation: "Universidad de Málaga"
+version: 1.0.0
+date-released: 2026-08-29
+license: MIT
+keywords:
+  - polyamine metabolism
+  - S-adenosylmethionine
+  - structural kinetic modeling
+  - pseudo-arclength continuation
+  - bistability
+abstract: >-
+  Python code, BioModels SBML inputs, and derived numerical data supporting a
+  structural-kinetic, substrate-gain, continuation, and regulatory-bistability analysis of hepatic polyamine metabolism.
+  The archive is a reproducibility object only and does not contain the article
+  manuscript or supplementary material.

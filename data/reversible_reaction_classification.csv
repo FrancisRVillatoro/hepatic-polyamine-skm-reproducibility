@@ -1,0 +1,20 @@
+reaction,classification
+V_b_GLU_c,opposed MM/linear transport
+V_b_GLY_c,opposed MM/linear transport
+V_b_SER_c,opposed MM/linear transport
+V_b_MET_c,opposed MM/linear transport
+VmSHMT,difference of independent saturating directional rates
+VmFTS,difference of independent saturating directional rates
+VmNE,shared-factor mass-action difference
+VmMTD,difference of independent saturating directional rates
+VmMTCH,difference of independent saturating directional rates
+VmSERc,difference of independent saturating transport rates
+VmHCOOHc,shared-factor linear directional rates
+VmGLYc,difference of independent saturating transport rates
+VcSHMT,difference of independent saturating directional rates
+VcNE,shared-factor mass-action difference
+VcMTD,difference of independent saturating directional rates
+VcMTCH,difference of independent saturating directional rates
+V_SAHH,difference of independent saturating directional rates
+V_GCS,common-denominator reversible numerator
+V_GS,common-denominator reversible numerator

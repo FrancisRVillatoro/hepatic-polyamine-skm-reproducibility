@@ -1,0 +1,4 @@
+pool,total_v1,total_v2,difference,components
+cfol,13.399999999999999,13.399999999999999,0.0,c_thf;c_5mf;c_2cf;c_1cf;c_10f;c_dhf
+mfol,40.20000000000001,40.20000000000001,0.0,m_thf;m_2cf;m_1cf;m_10f
+coa,199.5,199.5,0.0,species_8;species_9

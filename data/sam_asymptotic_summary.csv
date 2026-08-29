@@ -1,0 +1,2 @@
+mu_inf_fit,C_fit,p_fit,B0prime_mu,B1_effective,K_from_balance_coefficients,min_singular_value_reduced_raw_scaled_jacobian,condition_number_reduced_raw_scaled_jacobian,input_flux,output_flux,DNMT_fraction_output,GNMT_fraction_output,SAMDC_fraction_output,MATIII_fraction_input,MATI_fraction_input
+2.151802539828513,131.9096636580272,1.0003121159227146,82.01063066735516,10763.730351293078,131.24798899489073,1.6422897869031103e-06,52399088706.6453,252.00120712824537,252.00120712824926,0.714282224559941,0.2302233270148332,0.05549444842522588,0.9152453041740861,0.0847546958259139

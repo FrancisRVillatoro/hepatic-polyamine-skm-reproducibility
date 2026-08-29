@@ -1,0 +1,4 @@
+file,model_id,model_name,sha256,metadata_created,metadata_modified
+BIOMD0000000190_url.xml,Model_1,Rodriguez-Caso2006_Polyamine_Metabolism,e0087d22a559278e556941d4b95014f7c9ef45d642f848c3d1fbf8785fd3b83d,2008-09-08T15:27:37Z,2012-07-05T14:37:34Z
+BIOMD0000000674_url.xml,Reyes_Palomares2012___a_combined_model_hepatic_polyamine_and_sulfur_aminoacid_metabolism___version1_1,Reyes-Palomares2012 - a combined model hepatic polyamine and sulfur aminoacid metabolism - version1,b91c6916e3c83834fdfd65cf94cb4861b4d30d8c8a64a149e6ee975f19c140d7,2018-02-14T13:11:36Z;2018-02-14T13:11:36Z;2018-02-14T13:05:03Z,2018-02-14T16:15:16Z;2018-02-14T16:15:16Z
+BIOMD0000000450_url.xml,MODEL1305060001,Reyes-Palomares2012 -  a combined model hepatic polyamine and sulfur aminoacid metabolism - version2,91cd6fc7f5c15626733f65b8e7215cfc724b45890a1a3d48e0c16b65fb9ef672,2010-09-07T16:28:04Z;2013-05-09T11:39:57Z;2011-03-11T15:44:18Z,2014-04-04T02:32:36Z

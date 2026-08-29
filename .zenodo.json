@@ -1,0 +1,21 @@
+{
+  "title": "Reproducibility code and data for structural kinetic analysis of hepatic polyamine metabolism",
+  "upload_type": "software",
+  "description": "Python code, three BioModels SBML inputs, and derived numerical data supporting structural-kinetic, substrate-gain, MAT-capacity/throughput control, continuation, robustness, asymptotic substrate-saturation, and regulatory-bistability analyses of hepatic polyamine metabolism. This archive is a reproducibility object only and does not contain the article manuscript or supplementary material.",
+  "creators": [
+    {
+      "name": "Villatoro, Francisco R.",
+      "affiliation": "Universidad de Málaga"
+    }
+  ],
+  "access_right": "open",
+  "license": "MIT",
+  "keywords": [
+    "polyamine metabolism",
+    "S-adenosylmethionine",
+    "structural kinetic modeling",
+    "pseudo-arclength continuation",
+    "bistability"
+  ],
+  "notes": "Release v1.0.0, frozen after the manuscript v9 audit. Manuscript and supplementary article files are intentionally excluded. BioModels SBML inputs are CC0; see THIRD_PARTY_NOTICES.md."
+}
