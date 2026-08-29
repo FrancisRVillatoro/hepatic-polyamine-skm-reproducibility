@@ -8,6 +8,9 @@ authors:
     affiliation: "Universidad de Málaga"
 version: 1.0.0
 date-released: 2026-08-29
+doi: 10.5281/zenodo.22162043
+url: "https://github.com/FrancisRVillatoro/hepatic-polyamine-skm-reproducibility"
+repository-code: "https://github.com/FrancisRVillatoro/hepatic-polyamine-skm-reproducibility"
 license: MIT
 keywords:
   - polyamine metabolism
