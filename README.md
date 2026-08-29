@@ -4,6 +4,18 @@ This repository is the code-and-data reproducibility package for a computational
 study of hepatic polyamine metabolism. **It intentionally does not contain the
 article manuscript, Supplementary Material, or journal-submission files.**
 
+## Archived release and citation
+
+The first frozen code-and-data release is **v1.0.0**, archived by Zenodo.
+
+- Version DOI: **10.5281/zenodo.22162043**
+- Concept DOI (all versions): **10.5281/zenodo.22162042**
+- GitHub release: https://github.com/FrancisRVillatoro/hepatic-polyamine-skm-reproducibility/releases/tag/v1.0.0
+- Frozen release commit: `974c1b450d571c04a27eb2f40a0d12b3ff612942`
+
+For exact reproducibility of the results associated with manuscript v9, cite the
+**version DOI**. The concept DOI always resolves to the latest archived version.
+
 ## Contents
 
 - `code/` — executable Python workflows and the three source BioModels SBML files.
@@ -60,7 +72,6 @@ It recomputes basal logarithmic gains and the methionine-only/common-amino-acid
 PALC branches into `data/recomputed_substrate/`, leaving canonical CSV files
 untouched.
 
-
 ## v9 control calculations
 
 The final pre-submission audit added three MAT-policy controls and an analytical
@@ -110,7 +121,8 @@ that frozen numerical files remain byte-stable.
 ## Validation
 
 The frozen workflow was rerun component by component from a clean extraction.
-See `VALIDATION.md` for the archived closure tolerances, substrate-input cross-check, and final v9-control regeneration. Canonical CSV files are retained as numerical
+See `VALIDATION.md` for the archived closure tolerances, substrate-input cross-check,
+and final v9-control regeneration. Canonical CSV files are retained as numerical
 artifacts; reproduction scripts write new files rather than silently replacing
 them.
 
@@ -128,12 +140,12 @@ SBML files are distributed by BioModels under CC0 1.0; see
 
 ## Funding
 
-Development of this research was supported by the Universidad de Málaga through its II Plan Propio de Investigación, Transferencia y Divulgación Científica (PPRO).
+Development of this research was supported by the Universidad de Málaga through
+its II Plan Propio de Investigación, Transferencia y Divulgación Científica
+(PPRO).
 
 ## Citation
 
-For the journal submission, cite the immutable **Zenodo v1.0.0 DOI** corresponding
-to this exact code-and-data release. After the first GitHub/Zenodo release is
-created, place the version DOI in the article's Data and Code Availability
-section. The concept DOI may additionally be displayed in this README to point
-to the latest repository version.
+Villatoro, F. R. (2026). *Reproducibility code and data for structural kinetic
+analysis of hepatic polyamine metabolism* (v1.0.0). Zenodo.
+https://doi.org/10.5281/zenodo.22162043
