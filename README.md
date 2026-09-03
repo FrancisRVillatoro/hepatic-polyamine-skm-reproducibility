@@ -7,7 +7,7 @@ article manuscript, Supplementary Material, or journal-submission files.**
 ## Versions and archived releases
 
 - **v1.0.0** is the first frozen archive (Zenodo version DOI `10.5281/zenodo.22162043`).
-- **v1.0.1** consolidates the subsequent mathematical/numerical audits used in manuscript v10.2.
+- **v1.0.1** consolidates the subsequent mathematical/numerical audits used in manuscript v10.2 (Zenodo version DOI `10.5281/zenodo.22274449`).
 - Concept DOI for all versions: **10.5281/zenodo.22162042**.
 
 The v1.0.1 additions are reproducibility checks, not a change of the source BioModels kinetics: compatibility-space spectral projection near the extreme high-SAM tail; reduced-cusp nondegeneracy; root-specific numerical spread for the simple-pole boundary; and direct integration of the native physiological meal schedule.
@@ -90,4 +90,4 @@ Development of this research was supported by the Universidad de Málaga through
 
 ## Citation
 
-For v1.0.0, use Zenodo DOI `10.5281/zenodo.22162043`. For v1.0.1, use the new Zenodo **version DOI** assigned after the GitHub tag is archived. The concept DOI `10.5281/zenodo.22162042` always resolves to the latest archived repository version.
+For v1.0.0, use Zenodo DOI `10.5281/zenodo.22162043`. For v1.0.1, use Zenodo DOI `10.5281/zenodo.22274449`. The concept DOI `10.5281/zenodo.22162042` always resolves to the latest archived repository version.
