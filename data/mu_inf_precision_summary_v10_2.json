@@ -1,0 +1,9 @@
+{
+  "min": 2.1518025346174974,
+  "max": 2.1518025465840336,
+  "span": 1.196653620638699e-08,
+  "half_span": 5.983268103193495e-09,
+  "recommended_display": 2.15180254,
+  "conservative_method_spread": 1e-08,
+  "interpretation": "cross-method numerical spread; not a confidence interval or rigorous error bound"
+}

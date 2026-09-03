@@ -1,0 +1,11 @@
+{
+  "rho0_cusp": 0.08180259323371566,
+  "Y_cusp": 0.8813154700722712,
+  "a_cusp": 2.007110174251687,
+  "F": 0.0,
+  "F_Y": 0.0,
+  "F_YY": 0.0,
+  "F_YYY": -4.804,
+  "unfolding_determinant_a_rho0": -0.812,
+  "interpretation": "nondegenerate codimension-two cusp of the reduced scalar equilibrium problem"
+}

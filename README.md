@@ -4,148 +4,90 @@ This repository is the code-and-data reproducibility package for a computational
 study of hepatic polyamine metabolism. **It intentionally does not contain the
 article manuscript, Supplementary Material, or journal-submission files.**
 
-## Archived release and citation
+## Versions and archived releases
 
-The first frozen code-and-data release is **v1.0.0**, archived by Zenodo.
+- **v1.0.0** is the first frozen archive (Zenodo version DOI `10.5281/zenodo.22162043`).
+- **v1.0.1** consolidates the subsequent mathematical/numerical audits used in manuscript v10.2.
+- Concept DOI for all versions: **10.5281/zenodo.22162042**.
 
-- Version DOI: **10.5281/zenodo.22162043**
-- Concept DOI (all versions): **10.5281/zenodo.22162042**
-- GitHub release: https://github.com/FrancisRVillatoro/hepatic-polyamine-skm-reproducibility/releases/tag/v1.0.0
-- Frozen release commit: `974c1b450d571c04a27eb2f40a0d12b3ff612942`
-
-For exact reproducibility of the results associated with manuscript v9, cite the
-**version DOI**. The concept DOI always resolves to the latest archived version.
+The v1.0.1 additions are reproducibility checks, not a change of the source BioModels kinetics: compatibility-space spectral projection near the extreme high-SAM tail; reduced-cusp nondegeneracy; root-specific numerical spread for the simple-pole boundary; and direct integration of the native physiological meal schedule.
 
 ## Contents
 
 - `code/` — executable Python workflows and the three source BioModels SBML files.
-- `data/` — canonical CSV outputs used for reported numerical quantities.
-- `requirements.txt` — supported dependency ranges.
-- `requirements-lock.txt` — exact package versions used for the frozen workflow.
-- `environment_versions.txt` — recorded software environment.
-- `SHA256SUMS.txt` — cryptographic checksums for the release contents.
+- `data/` — canonical numerical outputs and compact audit summaries.
+- `requirements.txt` / `requirements-lock.txt` — dependency specifications.
+- `SHA256SUMS.txt` — v1.0.0 baseline checksums.
+- `SHA256SUMS_v1.0.1.txt` — checksums of canonical v1.0.1 audit data.
+- `V1_0_1_ADDITIONS_MANIFEST.tsv` — v1.0.1 delta inventory.
 
-The BioModels inputs are:
+BioModels inputs: `BIOMD0000000190`, `BIOMD0000000674`, and `BIOMD0000000450`.
 
-- `BIOMD0000000190` — mammalian polyamine model;
-- `BIOMD0000000674` — physiological integrated hepatic model;
-- `BIOMD0000000450` — proliferative integrated hepatic model.
-
-## Main reproducibility workflows
-
-Create a clean Python environment and install the locked dependencies when
-possible:
-
-```bash
-python -m venv .venv
-source .venv/bin/activate        # Windows PowerShell: .venv\\Scripts\\Activate.ps1
-pip install -r requirements-lock.txt
-```
-
-Run the fast deterministic closure checks:
+## Core workflows
 
 ```bash
 python code/reproduce_closures.py
-```
-
-Run the original full closure campaign (Monte Carlo, path/cube calculations,
-47-state continuation, timescale sweep, controls, and dynamic hysteresis):
-
-```bash
-python code/reproduce_closures.py --full
-```
-
-The substrate-input extension is kept separate because the high-SAM
-pseudo-arclength branches are comparatively expensive. A smoke test is:
-
-```bash
-python code/reproduce_substrate_inputs.py --smoke
-```
-
-The full substrate-input workflow is:
-
-```bash
 python code/reproduce_substrate_inputs.py
-```
-
-It recomputes basal logarithmic gains and the methionine-only/common-amino-acid
-PALC branches into `data/recomputed_substrate/`, leaving canonical CSV files
-untouched.
-
-## v9 control calculations
-
-The final pre-submission audit added three MAT-policy controls and an analytical
-check of the physiological high-SAM boundary. Regenerate the v9-specific fast
-calculations with:
-
-```bash
 python code/reproduce_v9_controls.py
 ```
 
-This recomputes the published, constant-nominal-capacity, and baseline-flux-matched
-MAT gain sweeps, the automated SBML diff/conserved-pool audit, and the simple-pole
-SAM-balance reduction. To regenerate the three rho=1 methionine PALC branches as
-well, run:
+## v1.0.1 audit workflows
+
+Fast post-v1.0.0 audits:
 
 ```bash
-python code/reproduce_v9_controls.py --full
+python code/reproduce_v10_2_audits.py --skip-meal
 ```
 
-Use `--figures` to regenerate the four v9 control figures into `figures_v9/`.
-The release retains canonical numerical CSVs in `data/`; these files are the
-source for the manuscript's reported v9 control values.
+Complete audit set, including the native 26-day meal-cycle convergence calculation:
 
-## Canonical results represented in `data/`
+```bash
+python code/reproduce_v10_2_audits.py
+```
 
-The archive contains, among other outputs:
+Individual workflows:
 
-- 2006 SBML audit and augmented SKM elasticities/robustness;
-- physiological-to-proliferative equilibrium continuation;
-- exact positive-direction decomposition of 19 signed reversible rates;
-- anchored structural-robustness ensembles and cancellation diagnostics;
-- factorial MAT / inverse-SAM-feedback / H2O2 controls;
-- asynchronous continuation paths, a 5x5x5 control cube, and the refined H2O2 face;
-- constant-total-nominal-MAT-capacity, baseline-flux-matched MATII, and fixed-H2O2 controls;
-- reduced regulatory-gain sensitivity and cusp calculations;
-- full 47-state pseudo-arclength branch, folds, and timescale sweep;
-- finite-rate hysteresis data;
-- methionine-only and common-amino-acid substrate-input PALC data;
-- logarithmic SAM input gains across the proliferative coordinate;
-- v9 MAT-policy gain/PALC controls, automated SBML identity/pool audit, and the simple-pole substrate-saturation calculation.
+```bash
+python code/compatibility_spectral_projection.py
+python code/cusp_nondegeneracy_check.py
+python code/mu_inf_precision_audit.py
+python code/native_meal_cycle_control.py
+```
 
-The legacy CSV column names `a_SN_on` and `a_SN_off` in some archived data mean
-the lower- and upper-parameter folds, respectively. The final analysis uses the
-unambiguous notation `a_-` and `a_+`; canonical CSV headers were not changed so
-that frozen numerical files remain byte-stable.
+The native-meal calculation retains the original `floor`/`piecewise` schedule in BIOMD0000000674 and splits integration at every schedule discontinuity. The root-spread calculation uses frozen v1.0.0 asymptotic tables and reports a cross-method numerical spread, not a statistical confidence interval.
+
+## Canonical v1.0.1 audit outputs
+
+- `data/compatibility_spectral_projection_tail.csv`
+- `data/compatibility_spectral_projection_summary.json`
+- `data/cusp_nondegeneracy_check.json`
+- `data/mu_inf_precision_estimates_v10_2.csv`
+- `data/mu_inf_precision_summary_v10_2.json`
+- `data/native_meal_cycle_day26_keypoints.csv`
+- `data/native_meal_cycle_summary_v10_2.json`
+
+`native_meal_cycle_control.py` regenerates the denser day-26 trajectory when rerun. The pre-existing v1.0.0 canonical outputs remain unchanged.
 
 ## Validation
 
-The frozen workflow was rerun component by component from a clean extraction.
-See `VALIDATION.md` for the archived closure tolerances, substrate-input cross-check,
-and final v9-control regeneration. Canonical CSV files are retained as numerical
-artifacts; reproduction scripts write new files rather than silently replacing
-them.
+See `VALIDATION.md`. Static integrity:
+
+```bash
+python code/verify_release.py
+```
 
 ## AI-assisted development
 
-See `AI_ASSISTANCE.md` for the disclosure of supportive use of OpenAI ChatGPT
-5.6 and Anthropic Claude Opus 5. All scientific outputs remain subject to human
-verification and responsibility.
+See `AI_ASSISTANCE.md`. Scientific outputs remain subject to human verification and responsibility.
 
 ## License and third-party inputs
 
-Original repository code and metadata are MIT licensed. The three BioModels
-SBML files are distributed by BioModels under CC0 1.0; see
-`THIRD_PARTY_NOTICES.md`.
+Original repository code and metadata are MIT licensed. The three BioModels SBML files are distributed by BioModels under CC0 1.0; see `THIRD_PARTY_NOTICES.md`.
 
 ## Funding
 
-Development of this research was supported by the Universidad de Málaga through
-its II Plan Propio de Investigación, Transferencia y Divulgación Científica
-(PPRO).
+Development of this research was supported by the Universidad de Málaga through its II Plan Propio de Investigación, Transferencia y Divulgación Científica (PPRO).
 
 ## Citation
 
-Villatoro, F. R. (2026). *Reproducibility code and data for structural kinetic
-analysis of hepatic polyamine metabolism* (v1.0.0). Zenodo.
-https://doi.org/10.5281/zenodo.22162043
+For v1.0.0, use Zenodo DOI `10.5281/zenodo.22162043`. For v1.0.1, use the new Zenodo **version DOI** assigned after the GitHub tag is archived. The concept DOI `10.5281/zenodo.22162042` always resolves to the latest archived repository version.

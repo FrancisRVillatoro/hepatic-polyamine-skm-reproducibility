@@ -1,0 +1,5 @@
+{
+  "max_checkpoint_abs_difference_per_h": 8.2e-05,
+  "legacy_extreme_tail_max_positive_artifact_per_h": 1.39e-11,
+  "interpretation": "magnitude filtering can misidentify conservation modes on the extreme tail; Q^T J Q remains stable"
+}
