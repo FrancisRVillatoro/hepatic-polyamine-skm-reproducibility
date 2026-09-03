@@ -1,0 +1,23 @@
+{
+  "warmup_days": 26,
+  "full_state_start_end_relative_mismatch_tight": 9.5e-08,
+  "SAM_min_uM": 14.476245224691736,
+  "SAM_min_time_h": 3.0,
+  "SAM_max_uM": 301.9257798708158,
+  "SAM_max_time_h": 21.100000000000023,
+  "SAM_midnight_start_uM": 36.944781580681926,
+  "SAM_midnight_end_uM": 36.9447819638006,
+  "SAM_max_abs_difference_loose_vs_tight_uM_upper_bound": 3e-07,
+  "loose_rtol": 2e-08,
+  "loose_atol": 2e-10,
+  "tight_rtol": 2e-10,
+  "tight_atol": 2e-12,
+  "schedule": {
+    "fasting": 0.25,
+    "breakfast": {"multiplier": 1.75, "hours": [7, 10]},
+    "lunch": {"multiplier": 1.75, "hours": [12, 15]},
+    "dinner": {"multiplier": 3.25, "hours": [18, 21]}
+  },
+  "sustained_eta_boundary": 2.44486,
+  "note": "The mismatch and loose-vs-tight peak comparison are numerical diagnostics, not statistical uncertainties."
+}
