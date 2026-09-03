@@ -1,83 +1,60 @@
-# GitHub → Zenodo release checklist
+# GitHub → Zenodo release checklist for v1.0.1
 
-Suggested GitHub repository name:
+The release object contains code, SBML inputs, numerical data, and reproducibility
+metadata only. It contains no article or Supplementary Material.
 
-`hepatic-polyamine-skm-reproducibility`
+## 1. Verify the release-ready commit
 
-The release object contains only code, SBML inputs, numerical data, and
-reproducibility metadata. It contains no article or supplementary manuscript.
-
-## 1. Create and push the GitHub repository
-
-From the directory containing this file:
+From a clean checkout:
 
 ```bash
-git init
-git branch -M main
-git add .
-git commit -m "Reproducibility code and data for hepatic polyamine SKM"
-git remote add origin git@github.com:<USER>/hepatic-polyamine-skm-reproducibility.git
-git push -u origin main
+python code/verify_release.py
+python code/reproduce_v10_2_audits.py --skip-meal
 ```
 
-Record the immutable commit:
+Optionally rerun the complete native meal-cycle audit:
+
+```bash
+python code/reproduce_v10_2_audits.py
+```
+
+Record the exact commit:
 
 ```bash
 git rev-parse HEAD
 ```
 
-## 2. Connect the repository to Zenodo
-
-In Zenodo, connect the GitHub account and enable archiving for this repository.
-Do this before creating the GitHub release.
-
-## 3. Create GitHub release v1.0.0
+## 2. Create GitHub release v1.0.1
 
 Tag the exact audited commit:
 
 ```bash
-git tag -a v1.0.0 -m "v1.0.0: code and data supporting the JTB submission"
-git push origin v1.0.0
+git tag -a v1.0.1 -m "v1.0.1: post-v1.0.0 audit consolidation"
+git push origin v1.0.1
 ```
 
-Then create a GitHub Release for tag `v1.0.0`. Suggested release title:
+Create a GitHub Release for tag `v1.0.1` using
+`GITHUB_RELEASE_v1.0.1.md` as release notes.
 
-`v1.0.0 — hepatic polyamine SKM reproducibility code and data`
-
-Suggested release notes are in `GITHUB_RELEASE_v1.0.0.md`.
-
-## 4. Verify the Zenodo archive
+## 3. Verify the Zenodo archive
 
 After Zenodo imports the GitHub release, verify:
 
-- title and author metadata;
-- version `1.0.0`;
-- open access;
-- MIT license for original repository content;
-- uploaded ZIP contains no manuscript `.tex`/`.pdf` files;
-- the three BioModels SBML inputs are present and their CC0 status is documented;
-- `SHA256SUMS.txt` is present.
+- version `1.0.1`;
+- author/title metadata;
+- open access and MIT license for original repository content;
+- all three BioModels SBML inputs;
+- `V1_0_1_ADDITIONS_MANIFEST.tsv` and `SHA256SUMS_v1.0.1.txt`;
+- no manuscript or Supplementary Material files.
 
-Record both identifiers:
+Record the new **version DOI**. The concept DOI remains
+`10.5281/zenodo.22162042`.
 
-- **version DOI** — cite this exact v1.0.0 DOI in the article;
-- **concept DOI** — optional README badge/link for all versions.
+## 4. Post-release metadata update
 
-## 5. Final manuscript replacement
+After Zenodo assigns the v1.0.1 DOI:
 
-Replace the three placeholders in the article's Data and Code Availability text
-with:
-
-1. public GitHub URL;
-2. immutable v1.0.0 commit SHA;
-3. Zenodo **version DOI**.
-
-Do not upload the article or Supplementary Material to this reproducibility
-repository merely to make those links resolvable.
-
-## 6. Optional post-release README update
-
-After Zenodo assigns the DOI, the default `main` branch README may be updated to
-show the DOI. The archived v1.0.0 object remains immutable. If the scientific
-code/data themselves change, create a new versioned release rather than silently
-altering v1.0.0.
+1. add the version DOI to `CITATION.cff` and the README on `main`;
+2. update the article Data and Code Availability section from v1.0.0 to the
+   exact v1.0.1 commit and Zenodo version DOI;
+3. do not alter the tagged v1.0.1 scientific release object.
