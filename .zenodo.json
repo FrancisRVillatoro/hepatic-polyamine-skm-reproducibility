@@ -1,7 +1,7 @@
 {
   "title": "Reproducibility code and data for structural kinetic analysis of hepatic polyamine metabolism",
   "upload_type": "software",
-  "description": "Python code, three BioModels SBML inputs, and derived numerical data supporting structural-kinetic, substrate-gain, MAT-capacity/throughput control, continuation, robustness, asymptotic substrate-saturation, and regulatory-bistability analyses of hepatic polyamine metabolism. This archive is a reproducibility object only and does not contain the article manuscript or supplementary material.",
+  "description": "Python code, three BioModels SBML inputs, and derived numerical data supporting structural-kinetic, substrate-gain, MAT-capacity/throughput control, continuation, robustness, asymptotic substrate-saturation, compatibility-space spectral, native meal-cycle, and regulatory-bistability analyses of hepatic polyamine metabolism. This archive is a reproducibility object only and does not contain the article manuscript or supplementary material.",
   "creators": [
     {
       "name": "Villatoro, Francisco R.",
@@ -17,5 +17,5 @@
     "pseudo-arclength continuation",
     "bistability"
   ],
-  "notes": "Release v1.0.0, frozen after the manuscript v9 audit. Manuscript and supplementary article files are intentionally excluded. BioModels SBML inputs are CC0; see THIRD_PARTY_NOTICES.md."
+  "notes": "Release v1.0.1 consolidates the post-v1.0.0 manuscript audits: compatibility-space spectral projection near the high-SAM tail, reduced-cusp nondegeneracy, root-specific numerical spread of the simple-pole boundary, and the native physiological meal-cycle control. It also corrects the sign notation of B1 in the validation text. Manuscript and supplementary article files are intentionally excluded. BioModels SBML inputs are CC0; see THIRD_PARTY_NOTICES.md."
 }
