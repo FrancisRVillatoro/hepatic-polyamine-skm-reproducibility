@@ -1,0 +1,22 @@
+path	category	purpose
+VERSION	release_metadata	version marker 1.0.1
+README.md	release_metadata	document v1.0.1 audit workflows
+VALIDATION.md	release_metadata	validation record including corrected B1 sign
+CITATION.cff	release_metadata	v1.0.1 citation metadata
+.zenodo.json	release_metadata	v1.0.1 Zenodo deposition metadata
+RELEASE_CHECKLIST.md	release_metadata	GitHub-to-Zenodo v1.0.1 checklist
+GITHUB_RELEASE_v1.0.1.md	release_metadata	release notes
+SHA256SUMS_v1.0.1.txt	release_metadata	checksums for canonical v1.0.1 audit data
+code/verify_release.py	code_or_source_input	static v1.0.1 integrity check
+code/reproduce_v10_2_audits.py	code_or_source_input	orchestrate post-v1.0.0 audits
+code/compatibility_spectral_projection.py	code_or_source_input	geometric conservation-mode projection
+code/cusp_nondegeneracy_check.py	code_or_source_input	cusp derivative and unfolding audit
+code/mu_inf_precision_audit.py	code_or_source_input	root-specific mu_inf numerical spread
+code/native_meal_cycle_control.py	code_or_source_input	native BIOMD0000000674 meal-cycle integration
+data/compatibility_spectral_projection_tail.csv	derived_data	representative high-SAM projected spectrum
+data/compatibility_spectral_projection_summary.json	derived_data	spectral-projection audit summary
+data/cusp_nondegeneracy_check.json	derived_data	cusp nondegeneracy summary
+data/mu_inf_precision_estimates_v10_2.csv	derived_data	cross-method mu_inf estimates
+data/mu_inf_precision_summary_v10_2.json	derived_data	mu_inf spread summary
+data/native_meal_cycle_day26_keypoints.csv	derived_data	archived half-hour meal-cycle keypoints
+data/native_meal_cycle_summary_v10_2.json	derived_data	meal-cycle convergence and extrema summary
