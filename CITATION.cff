@@ -6,9 +6,8 @@ authors:
   - family-names: Villatoro
     given-names: Francisco R.
     affiliation: "Universidad de Málaga"
-version: 1.0.0
-date-released: 2026-08-29
-doi: 10.5281/zenodo.22162043
+version: 1.0.1
+date-released: 2026-09-03
 url: "https://github.com/FrancisRVillatoro/hepatic-polyamine-skm-reproducibility"
 repository-code: "https://github.com/FrancisRVillatoro/hepatic-polyamine-skm-reproducibility"
 license: MIT
@@ -20,6 +19,7 @@ keywords:
   - bistability
 abstract: >-
   Python code, BioModels SBML inputs, and derived numerical data supporting a
-  structural-kinetic, substrate-gain, continuation, and regulatory-bistability analysis of hepatic polyamine metabolism.
-  The archive is a reproducibility object only and does not contain the article
-  manuscript or supplementary material.
+  structural-kinetic, substrate-gain, continuation, regulatory-bistability,
+  compatibility-space spectral, and native meal-cycle analysis of hepatic
+  polyamine metabolism. The archive is a reproducibility object only and does
+  not contain the article manuscript or supplementary material.
